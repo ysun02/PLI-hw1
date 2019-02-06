@@ -15,11 +15,11 @@
 %let digit1 = [1-9] ;
 %let zero = 0 ;
 %let comma = , ;
-%let num1 = {digit1}{digit}
-%let num2 = {digit1}{digit}{digit}
-%let num3 = {comma}{num2}
-%let num4 = {digit1} | {num1} | {num2}
-%let num5 = {num4}{num3}
+%let num1 = {digit1}{digit} ;
+%let num2 = {digit1}{digit}{digit} ;
+%let num3 = {comma}{num2} ;
+%let num4 = {digit1} | {num1} | {num2} ;
+%let num5 = {num4}{num3} ;
 %let all = {zero} | {num5}
 
 (*  Definitions for NumLex.  You may add more definitions (and probably
@@ -36,14 +36,14 @@
    * parser can deal with.
    *)
   fun string2Int x =
-    case x of
+    case String.explode(x) of
       Empty => 0
     | y::ys =>
         let
           val len = String.size(x)
         in
           if len > 3 andalso y <> "," then (valOf (Int.fromString y)) * Real.ceil(Math.pow(10.0, Real.fromInt (len-(len div 4)-1))) + string2Int ys
-          else string2Int ys
+          else string2Int (String.implode(ys))
         end
 
   fun eof() = T.EOF
