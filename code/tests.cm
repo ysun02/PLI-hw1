@@ -1,0 +1,20 @@
+(*  COMP 323 Homework 1:  lexical analysis.
+ *
+ *  N. Danner
+ *  Spring 2019
+ *)
+
+Group
+  structure Main
+is
+  tests.sml
+  unit_test.sml
+
+  nums.cm
+
+  $/basis.cm
+  $/smlnj-lib.cm
+  $smlnj-tdp/plugins.cm
+  $/ml-lpt-lib.cm
+
+  $smlnj/compiler/compiler.cm

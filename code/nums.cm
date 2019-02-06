@@ -1,0 +1,18 @@
+(*  COMP 323 Homework 1:  lexical analysis.
+ *
+ *  N. Danner
+ *  Spring 2019
+ *)
+
+Group
+  structure NumLex
+  structure NumsTokens
+
+is
+
+  tokens.sml
+  nums.lex : ml-ulex
+
+  $/basis.cm
+  $/ml-lpt-lib.cm
+
