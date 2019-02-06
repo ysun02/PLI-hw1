@@ -14,7 +14,7 @@
 %let digit = [0-9] ;
 %let digit1 = [1-9] ;
 %let zero = 0 ;
-%let comma = , ;
+%let comma = "," ;
 %let num1 = {digit1}{digit} ;
 %let num2 = {digit1}{digit}{digit} ;
 %let num3 = {comma}{num2} ;
@@ -49,6 +49,7 @@
   fun eof() = T.EOF
 ) ;
 
-(*  Add your rule here.
 {all} => (T.Num ( string2Int yytext )) ;
+(*  Add your rule here.
+
 *)
